@@ -1,34 +1,55 @@
-# 🔄 Hackerrank : # 📦 Python Word Wrap Function
+# # 🔢 Hackerrank:# 🏆 Student Topper Finder
 
-This Python program defines a function that **wraps a long string into multiple lines**, ensuring each line does not exceed a specified width.
+This Python program helps determine the **top-performing student** based on the total marks across five subjects. It uses a dictionary to store each student’s marks and identifies the topper using simple calculations and built-in functions.
 
 ---
 
 ## 🎯 Aim
 
-To write a Python function that takes a long string and a specified width, and returns the string formatted with line breaks such that each line has **at most the given width**.
+To maintain a dictionary of students with their marks in five subjects, calculate their **total marks**, store them in a new dictionary, and identify the **student with the highest total (topper)**.
 
 ---
 
 ## 🧠 Algorithm
 
 1. **Start** the program.
-2. Define a function `wrap(string, max_width)`:
-   - Create an empty list `wrapped_lines` to store parts of the string.
-   - Loop through the string using steps of `max_width`.
-   - In each iteration, extract a substring of length `max_width`.
-   - Append this substring to the list.
-3. Join the list with `\n` to create the final string.
-4. Return the result.
-5. **End** the program.
+2. Create a dictionary `student_marks`:
+   - Keys → Student names.
+   - Values → List of marks in five subjects.
+3. Initialize an empty dictionary `total_marks`.
+4. Loop through `student_marks`:
+   - Calculate the total marks using `sum()`.
+   - Store the result in `total_marks`.
+5. Use `max()` on `total_marks` to find the student with the highest total.
+6. Print:
+   - The `total_marks` dictionary.
+   - The **topper's name and score**.
 
 ---
 
+## 💻 PROGRAM:
+```python
 
-## 🧪 Program
-Add Code Here
+marks = eval(input())
 
-## Sample Output
+# Calculate total marks
+totals = {name: sum(scores) for name, scores in marks.items()}
 
-## Result
+# Print total marks
+print(totals)
 
+# Find topper
+top_score = max(totals.values())
+for name, total in totals.items():
+    if total == top_score:
+        print(f"Topper is: {name} with marks = {total}")
+
+```
+
+## OUTPUT
+
+![image](https://github.com/user-attachments/assets/ac8606c0-9694-4c4e-82fb-37778d9cc1ce)
+
+## RESULT
+
+Thus, the program has been executed successfully.
